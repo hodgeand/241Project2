@@ -1,10 +1,8 @@
-sizes=(8, 16, 32)
-
+sizes=(8 16 32)
 
 for program in $@
 do	
-	for i in sizes
-	do
-		python3 $program i
-	done
+	python3 $program ${sizes[0]} > $program.out
+	python3 $program ${sizes[1]} >> $program.out
+	python3 $program ${sizes[2]} >> $program.out
 done
